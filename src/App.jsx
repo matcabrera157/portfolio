@@ -1,0 +1,39 @@
+import { useEffect } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
+import Education from "./components/Education";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+
+import "./styles/main.css";
+
+function App() {
+
+  const toggleTheme = () => {
+    document.body.classList.toggle("light");
+  };
+
+  return (
+    <>
+      <Navbar toggleTheme={toggleTheme} />
+      <Hero />
+      <About />
+      <Projects />
+      <Skills />
+      <Education />
+      <Contact />
+      <Footer />
+    </>
+  );
+}
+
+export default App;
+
+
+
+
+

@@ -1,0 +1,363 @@
+:root {
+  /* ACCENT */
+  --accent-primary: #2dd4bf;
+  --accent-secondary: #22d3ee;
+
+  /* GLOWS */
+  --accent-glow-soft: rgba(56, 189, 248, 0.14);
+  --accent-glow-medium: rgba(56, 189, 248, 0.24);
+  --accent-glow-strong: rgba(56, 189, 248, 0.4);
+
+  /* TAGS */
+  --accent-tag-bg: rgba(56, 189, 248, 0.1);
+  --accent-tag-text: #2dd4bf;
+}
+
+/* ===============================
+   SECTION LAYOUT
+   =============================== */
+
+
+
+.education-section {
+  min-height: calc(100vh - 70px);
+  padding: 48px 8% 32px;
+  scroll-margin-top: 70px;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(45, 212, 191, 0.08), transparent 55%),
+    radial-gradient(circle at 80% 60%, rgba(34, 211, 238, 0.06), transparent 60%),
+    linear-gradient(135deg, #0a192f, #020c1b);
+  color: #e5e7eb;
+  display: flex;
+}
+
+
+.education-content {
+  width: 100%;
+  max-width: 1600px;
+  margin: auto; 
+  transform: translateY(-40px);
+}
+
+/* ===============================
+   HEADER
+   =============================== */
+
+.education-header {
+  text-align: center;
+  transform: translateY(-24px);
+  margin-bottom: 56px;
+}
+
+.education-header h2 {
+
+  font-size: 2rem;
+  font-weight: 600;
+  
+}
+
+
+.education-header p {
+  color: #94a3b8;
+  max-width: 600px;
+  margin: 15px auto 0;
+}
+
+.edu-icon {
+  font-size: 3.8rem;
+  color: var(--accent-primary);
+  position: relative;
+  top: -2px; 
+  filter: drop-shadow(0 0 10px var(--accent-glow-soft));
+}
+
+
+
+
+/* ===============================
+   GRID
+   =============================== */
+
+.education-container {
+  width: 100%;
+  max-width: 1400px;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(360px, 1fr));
+  gap: 28px;
+
+  padding: 0 20px;
+}
+
+/* ===============================
+   CARD
+   =============================== */
+
+.education-card {
+  position: relative;
+  padding: 30px;
+  border-radius: 18px;
+
+  background: linear-gradient(145deg, #020617, #0b1220);
+  border: 1px solid var(--accent-glow-soft);
+
+ box-shadow: 0 0 18px var(--accent-glow-soft);
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.education-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-primary);
+
+  box-shadow:
+    0 0 0 1px var(--accent-glow-strong),
+    0 0 38px var(--accent-glow-medium);
+}
+
+.education-card:hover .edu-description {
+  color: #cbd5f5;
+}
+
+
+/* ===============================
+   BADGE
+   =============================== */
+
+.edu-badge {
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  border-radius: 999px;
+
+  background: #334155;
+  color: #e5e7eb;
+}
+
+.edu-badge.active {
+  background: linear-gradient(
+    90deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
+  color: #020617;
+}
+
+/* ===============================
+   TEXT
+   =============================== */
+
+.education-card h3 {
+  margin-top: 15px;
+  font-size: 1.4rem;
+}
+
+
+
+.education-card h4 {
+  font-size: 1rem;
+  color: var(--accent-primary);
+  margin-bottom: 10px;
+}
+
+
+.edu-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 15px;
+}
+
+.edu-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.edu-meta-icon {
+  font-size: 1rem;
+  color: var(--accent-primary);
+  filter: drop-shadow(0 0 6px var(--accent-glow-medium));
+}
+
+
+/* ===============================
+   PROGRESS
+   =============================== */
+
+.progress-wrapper {
+  margin-bottom: 15px;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #020617;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
+}
+
+.progress-text {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 5px;
+  display: block;
+}
+
+
+
+/* ===============================
+   DESCRIPTION
+   =============================== */
+
+.edu-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #9ca3af; /* gris azulado */
+}
+
+
+/* ===============================
+   TAGS
+   =============================== */
+
+.edu-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.edu-tags span {
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  border-radius: 999px;
+
+  background: var(--accent-tag-bg);
+  color: var(--accent-tag-text);
+}
+
+
+/* ===============================
+   EDUCATION – LIGHT MODE
+   =============================== */
+
+body.light .education-section {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(45, 212, 191, 0.025), transparent 55%),
+    radial-gradient(circle at 80% 60%, rgba(34, 211, 238, 0.02), transparent 60%),
+    #f8fafc;
+  color: #020617;
+}
+
+body.light .education-header p {
+  color: #64748b;
+}
+
+body.light .education-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 24px rgba(2, 6, 23, 0.06);
+}
+
+body.light .education-card:hover {
+  border-color: var(--accent-primary);
+  box-shadow:
+    0 0 0 1px var(--accent-primary),
+    0 12px 32px rgba(45, 212, 191, 0.25);
+}
+
+body.light .edu-description {
+  color: #475569;
+}
+
+body.light .edu-meta {
+  color: #64748b;
+}
+
+body.light .edu-badge {
+  background: #e2e8f0;
+  color: #020617;
+}
+
+body.light .edu-tags span {
+  background: rgba(45, 212, 191, 0.12);
+  color: #0f766e;
+}
+
+
+/* ===============================
+   EDUCATION – LIGHT MODE REFINES
+   =============================== */
+
+
+body.light .edu-icon {
+  filter: none;
+}
+
+
+body.light .progress-bar {
+  background: #e5e7eb;
+}
+
+
+body.light .edu-badge.active {
+  background: #2dd4bf;
+  color: #020617;
+  box-shadow: none;
+}
+
+
+body.light .education-card:hover .edu-description {
+  color: #475569;
+}
+
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+
+@media (max-width: 1300px) {
+  .education-container {
+    grid-template-columns: repeat(2, minmax(360px, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .education-section {
+    padding: 40px 6% 24px;
+  }
+
+  .education-container {
+    grid-template-columns: 1fr;
+  }
+
+  .education-header h2 {
+    font-size: 2.4rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .education-container {
+    max-width: 1500px;
+  }
+}

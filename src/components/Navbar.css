@@ -1,0 +1,429 @@
+:root {
+  /* =========================
+     NAVBAR COLORS
+  ========================= */
+  --nav-bg-dark: linear-gradient(
+    180deg,
+    rgba(10, 25, 47, 0.78),
+    rgba(10, 25, 47, 0.65)
+  );
+
+  --nav-border-line: rgba(56, 189, 248, 0.35);
+
+  --nav-text: #cbd5e1;
+  --nav-text-active: #2dd4bf;
+  --nav-text-light: #334155;
+
+  --nav-accent: #2dd4bf;
+  --nav-accent-alt: #38bdf8;
+  --nav-accent-light: #0ea5e9;
+
+  --nav-bg-active: rgba(56, 189, 248, 0.08);
+  --nav-bg-active-hover: rgba(56, 189, 248, 0.16);
+
+/* =========================
+   SIZES & RADIUS (RECOMENDADO)
+========================= */
+--nav-radius-sm: 8px;  
+--nav-radius-md: 12px;  
+
+
+  /* =========================
+     SHADOWS
+  ========================= */
+  --nav-glow-soft: 0 0 8px rgba(45, 212, 191, 0.35);
+  --nav-glow-strong: 0 0 18px rgba(56, 189, 248, 0.9);
+
+  --nav-btn-shadow:
+    0 6px 18px rgba(45, 212, 191, 0.35),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.35);
+
+  /* =========================
+     TRANSITIONS
+  ========================= */
+  --nav-fast: 0.22s ease;
+  --nav-mid: 0.25s ease;
+  --nav-cubic: cubic-bezier(.4,1.6,.4,1);
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.site-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+
+  background: var(--nav-bg-dark);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+
+.site-navbar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--nav-border-line);
+}
+/* =========================
+   SCROLL PROGRESS
+========================= */
+
+.scroll-progress {
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(
+    90deg,
+    var(--nav-accent),
+    var(--nav-accent-alt)
+  );
+  box-shadow: 0 0 10px rgba(45, 212, 191, 0.6);
+  transition: width 0.12s linear;
+}
+
+/* =========================
+   CONTENIDO INTERNO
+========================= */
+
+.navbar-inner {
+  width: 100%;
+  padding: 14px 24px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+
+/* =========================
+   BRAND
+========================= */
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.brand-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+padding-left: 1.4px;
+padding-top: 0.9px;
+ background: transparent;
+border: 2px solid var(--nav-accent);
+color: var(--nav-accent);
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  line-height: 1;
+
+  box-shadow: var(--nav-glow-soft);
+
+  transition:
+    transform var(--nav-mid),
+    box-shadow var(--nav-mid),
+    border-color var(--nav-mid);
+
+  pointer-events: auto;
+}
+
+
+/* hover avatar */
+.brand-link:hover .brand-avatar {
+  transform: scale(1.18);
+  border-color: var(--nav-accent-alt);
+  box-shadow: var(--nav-glow-strong);
+}
+
+/* nombre */
+.brand-name {
+  font-size: 0.95rem;
+  font-weight: 650;
+  letter-spacing: 0.015em;
+  color: var(--nav-accent);
+  opacity: 0.9;
+
+  transition: transform var(--nav-mid);
+}
+
+.brand-link:hover .brand-name {
+  transform: scale(1.05);
+}
+
+
+
+/* =========================
+   LINKS
+========================= */
+
+.navbar-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links a {
+  position: relative;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--nav-text);
+  text-decoration: none;
+  padding: 6px 10px;
+  white-space: nowrap;
+  border-radius: var(--nav-radius-md);
+
+  transition:
+    color var(--nav-mid),
+    background-color var(--nav-mid);
+}
+
+/* underline */
+.navbar-links a::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--nav-accent);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--nav-accent);
+}
+
+.navbar-links a:hover::before {
+  width: 100%;
+}
+
+.navbar-links a.active {
+  background: var(--nav-bg-active);
+  color: var(--nav-accent);
+}
+
+.navbar-links a.active::before {
+  width: 100%;
+}
+
+.navbar-links a.active:hover {
+  background: var(--nav-bg-active-hover);
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar-btn {
+  position: relative;
+  padding: 10px 22px;
+  border-radius: var(--nav-radius-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  background: linear-gradient(
+    135deg,
+    var(--nav-accent),
+    var(--nav-accent-alt)
+  );
+  color: #020617;
+  text-decoration: none;
+  border: none;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  box-shadow: none;
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.22s ease,
+    background 0.22s ease;
+}
+
+.navbar-btn:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 14px rgba(45, 212, 191, 0.45),
+    0 0 26px rgba(45, 212, 191, 0.22);
+}
+
+
+
+.navbar-btn:active {
+  background: #1f2937;
+  color: #cbd5e1;
+
+  transform: translateY(1px) scale(0.985);
+
+  box-shadow:
+    
+    0 0 22px rgba(45, 212, 191, 0.45),
+    0 0 44px rgba(34, 211, 238, 0.28),
+
+  }
+
+
+/* =========================
+   THEME TOGGLE
+========================= */
+
+.theme-toggle {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--nav-radius-sm);
+  border: 1px solid transparent;
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  transition:
+    background var(--nav-mid),
+    border-color var(--nav-mid);
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.theme-toggle:hover {
+  background: rgba(45, 212, 191, 0.15);
+}
+
+.theme-toggle span {
+  position: absolute;
+  font-size: 1rem;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+.icon-moon {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.icon-sun {
+  opacity: 0;
+  transform: translateY(6px) scale(0.8);
+}
+
+/* =========================
+   BURGER
+========================= */
+
+.navbar-burger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: var(--nav-accent-alt);
+  cursor: pointer;
+}
+
+
+body.light .icon-moon {
+  opacity: 0;
+  transform: translateY(-6px) scale(0.8);
+}
+
+body.light .icon-sun {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* =========================
+   LIGHT MODE
+========================= */
+
+body.light .site-navbar {
+  background: rgba(248, 250, 252, 0.95);
+}
+
+body.light .navbar-links a {
+  color: var(--nav-text-light);
+}
+
+body.light .navbar-links a.active {
+  background: rgba(14, 165, 233, 0.15);
+  color: var(--nav-accent-light);
+}
+
+body.light .navbar-links a.active:hover {
+  background: rgba(14, 165, 233, 0.25);
+}
+
+body.light .brand-name {
+  color: var(--nav-accent-light);
+}
+
+body.light .navbar-btn {
+  background: linear-gradient(
+    135deg,
+    #5eead4,
+    #60a5fa
+  );
+
+  color: #0f172a;
+  box-shadow:
+    0 4px 12px rgba(56, 189, 248, 0.25),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.6);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .navbar-inner {
+    grid-template-columns: auto auto;
+    padding: 14px 24px;
+  }
+
+  .navbar-links,
+  .navbar-actions {
+    display: none;
+  }
+
+  .navbar-burger {
+    display: block;
+  }
+}

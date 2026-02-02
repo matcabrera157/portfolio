@@ -1,0 +1,225 @@
+/* =========================
+   RESET & BASE
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+
+body, #root {
+  font-family: "Inter", system-ui, Arial, sans-serif;
+  min-height: 100%;
+  background: #0f172a; /* fondo base oscuro */
+  color: #e6f1ff;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Light mode base */
+body.light {
+  background: #f8fafc;
+  color: #020617;
+}
+
+:root {
+  /* === BACKGROUNDS === */
+  --bg-main: linear-gradient(135deg, #020617, #0a192f);
+  --bg-section: linear-gradient(135deg, #0a192f, #020c1b);
+  --bg-card: #112240;
+
+  /* === TEXT === */
+  --text-main: #e6f1ff;
+  --text-soft: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  /* === ACCENTS === */
+  --accent: #2dd4bf;
+  --accent-alt: #22d3ee;
+}
+
+body.light {
+  --bg-main: linear-gradient(135deg, #f8fafc, #eef2f7);
+  --bg-section: linear-gradient(135deg, #ffffff, #f1f5f9);
+  --bg-card: #ffffff;
+
+  --text-main: #020617;
+  --text-soft: #334155;
+  --text-muted: #64748b;
+
+  --accent: #0ea5e9;
+  --accent-alt: #38bdf8;
+}
+
+/* =========================
+   FONDO SUTIL TIPO PORTFOLIO
+========================= */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#2dd4bf 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #2dd4bf, #22d3ee);
+  top: 20%;
+  left: -150px;
+  opacity: 0.12;
+  z-index: -1;
+  animation: floatCircle 25s ease-in-out infinite alternate;
+}
+
+@keyframes floatCircle {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(200px, 50px) rotate(45deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+body.light::before,
+body.light::after {
+  opacity: 0.03;
+}
+
+/* =========================
+   BOTONES GENERALES
+========================= */
+.btn {
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+
+  transition:
+    background-color 0.18s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.18s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn.primary {
+  background: #2dd4bf; 
+  color: #020617;
+}
+
+.btn.primary:hover {
+  box-shadow: 0 0 18px rgba(45, 212, 191, 0.8);
+  transform: translateY(-2px);
+}
+
+.btn.secondary {
+  border: 1px solid #22d3ee; 
+  color: #22d3ee;
+  background: transparent;
+}
+
+.btn.secondary:hover {
+  background: #22d3ee;
+  color: #020617;
+}
+
+/* =========================
+   SECTIONS GENERALES
+========================= */
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 24px;
+  color: #e5e7eb;
+}
+
+body.light .section h2 {
+  color: #020617;
+}
+
+.section p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+  max-width: 800px;
+}
+
+body.light .section p {
+  color: #334155;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  border-top: 1px solid #1f2933;
+  padding: 30px 20px;
+  background: #020617;
+}
+
+body.light .footer {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+
+body.light .footer p {
+  color: #64748b;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  font-size: 0.9rem;
+  color: #2dd4bf;
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   CONTAINERS
+========================= */
+:root {
+  --container-max: 1100px;
+  --container-padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
