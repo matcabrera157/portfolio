@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import "./footer.css";
+import "./Footer.css";
 import {
   FaGithub,
   FaLinkedin,
