@@ -34,6 +34,7 @@ El objetivo del proyecto es servir como **carta de presentación técnica**, tan
 
 El proyecto está organizado siguiendo una estructura modular basada en componentes reutilizables:
 
+
 ├── public/
 ├── src/
 │ ├── assets/ # Recursos estáticos
