@@ -29,7 +29,7 @@ const Hero = () => {
           {/* TEXTO */}
 
           <h1 className="hero-name">Matias Cabrera</h1>
-          <h2 className="hero-role">Full Stack Developer</h2>
+          <h2 className="hero-role">Full Stack Developer Jr</h2>
 
           <p className="hero-description">
             Desarrollo aplicaciones web modernas con React, Node.js y Express,
