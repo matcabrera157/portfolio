@@ -1,6 +1,6 @@
-import nodemailer from "nodemailer";
+const nodemailer = require("nodemailer");
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
   }
@@ -23,7 +23,7 @@ export default async function handler(req, res) {
     await transporter.sendMail({
       from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER,
-      replyTo: email, 
+      replyTo: email,
       subject: `Nuevo mensaje de ${name}`,
       html: `
         <p><strong>Nombre:</strong> ${name}</p>
@@ -33,10 +33,9 @@ export default async function handler(req, res) {
       `,
     });
 
-
     return res.status(200).json({ success: true });
   } catch (error) {
     console.error("MAIL ERROR:", error);
     return res.status(500).json({ success: false });
   }
-}
+};
