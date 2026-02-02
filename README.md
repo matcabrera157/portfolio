@@ -1,16 +1,102 @@
-# React + Vite
+# 📌 Portfolio - Matías Cabrera
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🌐 Este es mi sitio personal desarrollado con React-Vite y desplegado en Vercel.  
+Visita la página 👉 https://matias-cabrera.vercel.app
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 👨‍💻 Descripción del proyecto
 
-## React Compiler
+Este repositorio contiene el código fuente de mi **portfolio web personal**, una aplicación desarrollada para mostrar de forma clara y ordenada mis proyectos Full Stack, stack tecnológico y perfil profesional.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+El objetivo del proyecto es servir como **carta de presentación técnica**, tanto para reclutadores como para equipos de desarrollo, destacando experiencia práctica en Front End y Back End, buenas prácticas y diseño responsive.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tecnologías utilizadas en el portfolio
+
+### Front End
+- React JS
+- JavaScript
+- HTML5
+- CSS3
+- Bootstrap
+
+### Build & Deploy
+- Vite
+- npm
+- Git & GitHub
+- Vercel
+
+---
+
+## 🧱 Arquitectura y estructura
+
+El proyecto está organizado siguiendo una estructura modular basada en componentes reutilizables:
+
+├── public/
+├── src/
+│ ├── assets/ # Recursos estáticos
+│ ├── components/ # Componentes reutilizables
+│ ├── styles/ # Estilos globales y por sección
+│ ├── App.jsx # Composición principal
+│ └── main.jsx # Punto de entrada
+
+Esta estructura permite escalar el portfolio fácilmente, agregando nuevas secciones o proyectos sin afectar el resto de la aplicación.
+
+---
+
+## 🎯 Funcionalidades del portfolio
+
+- Navegación clara entre secciones
+- Renderizado dinámico de contenido mediante React
+- Diseño responsive adaptable a distintos tamaños de pantalla
+- Sección de proyectos con links a:
+  - Repositorios
+  - Demos
+- Accesos rápidos a GitHub, LinkedIn y contacto
+
+---
+
+## 📂 Secciones del sitio
+
+El portfolio está compuesto por las siguientes secciones:
+
+- **Hero / Home**: Presentación visual inicial
+- **About**: Descripción breve del perfil técnico
+- **Skills**: Tecnologías utilizadas
+- **Projects**: Proyectos destacados con información técnica
+- **Contact**: Canales de contacto y redes profesionales
+
+---
+
+## 🚀 Deploy
+
+El portfolio se encuentra desplegado en **Vercel** y se actualiza automáticamente con cada push a la rama principal.
+
+🔗 https://matias-cabrera.vercel.app
+
+---
+
+## 🧪 Ejecución local
+
+1. Clonar el repositorio:
+```bash
+git clone https://github.com/matcabrera157/portfolio.git
+```
+2. Instalar dependencias:
+npm install
+
+3. Ejecutar en modo desarrollo:
+npm run dev
+
+4. Abrir en el navegador:
+http://localhost:5173
+
+📌 Posibles mejoras futuras
+
+Agregar animaciones suaves (Framer Motion)
+
+Mejorar accesibilidad (ARIA, contraste, navegación por teclado)
+
+Internacionalización (ES / EN)
