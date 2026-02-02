@@ -105,7 +105,7 @@ const Footer = () => {
 
   {/* LinkedIn abre en nueva pestaña */}
   <a
-    href="https://www.linkedin.com/in/matias-cabrera-15983639a/"
+    href="https://www.linkedin.com/in/matias-cabrera-mj/"
     target="_blank"
     rel="noopener noreferrer"
     aria-label="LinkedIn"
