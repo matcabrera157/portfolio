@@ -34,16 +34,16 @@ El objetivo del proyecto es servir como **carta de presentación técnica**, tan
 
 El proyecto está organizado siguiendo una estructura modular basada en componentes reutilizables:
 
-
-├── public/
-├── src/
-│ ├── assets/ # Recursos estáticos
-│ ├── components/ # Componentes reutilizables
-│ ├── styles/ # Estilos globales y por sección
-│ ├── App.jsx # Composición principal
-│ └── main.jsx # Punto de entrada
+    ├── public/
+    ├── src/
+    │   ├── assets/        # Recursos estáticos
+    │   ├── components/    # Componentes reutilizables
+    │   ├── styles/        # Estilos globales y por sección
+    │   ├── App.jsx        # Composición principal
+    │   └── main.jsx       # Punto de entrada
 
 Esta estructura permite escalar el portfolio fácilmente, agregando nuevas secciones o proyectos sin afectar el resto de la aplicación.
+
 
 ---
 
